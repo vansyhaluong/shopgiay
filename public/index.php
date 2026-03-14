@@ -1,18 +1,18 @@
 <?php
-<<<<<<< HEAD
+
 require_once "Database.php";
 $db = new Database();
 $sql = "select * from products";
 $products = $db->select($sql);
 $p = $products[0];
 
-=======
+
 require_once "./public/Database.php";
 $db = new Database();
 $sql = "select * from products";
 $products = $db->select($sql);
 var_dump($products);
->>>>>>> 06b1c931821ced6ee0cdfb5237f5b45bf9617aed
+
 ?>
 
 <!DOCTYPE html>
@@ -229,11 +229,11 @@ var_dump($products);
 
                 <!-- Hero Image -->
                 <div class="flex justify-center">
-<<<<<<< HEAD
-                    <img src="images/<?= $p['image'] ?>" alt="Giày thể thao mới" class="w-full max-w-sm rounded-2xl shadow-lg">
-=======
-                    <img src="/images/<?= $products[0]['image'] ?>" alt="Giày thể thao mới" class="w-full max-w-sm rounded-2xl shadow-lg">
->>>>>>> 06b1c931821ced6ee0cdfb5237f5b45bf9617aed
+                    <<<<<<< HEAD
+                        <img src="images/<?= $p['image'] ?>" alt="Giày thể thao mới" class="w-full max-w-sm rounded-2xl shadow-lg">
+                        =======
+                        <img src="/images/<?= $products[0]['image'] ?>" alt="Giày thể thao mới" class="w-full max-w-sm rounded-2xl shadow-lg">
+                        >>>>>>> 06b1c931821ced6ee0cdfb5237f5b45bf9617aed
                 </div>
             </div>
         </div>
@@ -296,8 +296,8 @@ var_dump($products);
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Sản Phẩm Nổi Bật</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-<<<<<<< HEAD
-                <?php foreach ($products as $product): ?>
+                <<<<<<< HEAD
+                    <?php foreach ($products as $product): ?>
                     <!-- Product Card 1 -->
                     <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md">
                         <div class="relative h-64 bg-gray-200 overflow-hidden">
@@ -322,7 +322,7 @@ var_dump($products);
                     </div>
                 <?php endforeach; ?>
 
-=======
+                =======
                 <!-- Product Card 1 -->
                 <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md">
                     <div class="relative h-64 bg-gray-200 overflow-hidden">
@@ -414,7 +414,7 @@ var_dump($products);
                         </div>
                     </div>
                 </div>
->>>>>>> 06b1c931821ced6ee0cdfb5237f5b45bf9617aed
+                >>>>>>> 06b1c931821ced6ee0cdfb5237f5b45bf9617aed
             </div>
         </div>
     </section>
