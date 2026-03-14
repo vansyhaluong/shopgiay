@@ -221,24 +221,22 @@ if (isset($_GET['product_id'])) {
                     <div class="mb-4 bg-gray-100 rounded-2xl overflow-hidden">
 
                         <img src="images/<?= $p['image'] ?>" alt="Giày chi tiết" class="w-full h-96 object-cover">
-                        =======
-                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop" alt="Giày chi tiết" class="w-full h-96 object-cover">
 
                     </div>
-                    <div class="grid grid-cols-4 gap-3">
+                    <!-- <div class="grid grid-cols-4 gap-3">
                         <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=150&h=150&fit=crop" alt="Thumb 1" class="w-full rounded-lg cursor-pointer hover:opacity-80 transition border-2 border-primary">
                         <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=150&h=150&fit=crop" alt="Thumb 2" class="w-full rounded-lg cursor-pointer hover:opacity-80 transition border-2 border-gray-200">
                         <img src="https://images.unsplash.com/photo-1525966222134-fceba0dea025?w=150&h=150&fit=crop" alt="Thumb 3" class="w-full rounded-lg cursor-pointer hover:opacity-80 transition border-2 border-gray-200">
                         <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=150&h=150&fit=crop" alt="Thumb 4" class="w-full rounded-lg cursor-pointer hover:opacity-80 transition border-2 border-gray-200">
-                    </div>
+                    </div> -->
                 </div>
 
                 <!-- Product Details -->
                 <div>
 
                     <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2"><?= $p['product_name'] ?></h1>
-                    =======
-                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Giày Chạy Swift Pro 2026</h1>
+
+                    <!-- <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Giày Chạy Swift Pro 2026</h1> -->
 
                     <div class="flex items-center gap-3 mb-4">
                         <span class="text-2xl text-yellow-500">★★★★★</span>
@@ -248,17 +246,15 @@ if (isset($_GET['product_id'])) {
                     <div class="flex items-center gap-4 mb-6">
 
                         <span class="text-4xl font-bold text-primary"><?= $p['price_id'] ?></span>
-
-
-                        <span class="text-4xl font-bold text-primary">1.290.000₫</span>
-                        <span class="text-xl line-through text-gray-500">1.850.000₫</span>
+                        <!--  <span class="text-4xl font-bold text-primary">1.290.000₫</span>
+                        <span class="text-xl line-through text-gray-500">1.850.000₫</span> -->
 
                         <span class="bg-accent text-white px-3 py-1 rounded-lg font-semibold">-30%</span>
                     </div>
 
                     <p class="text-gray-600 mb-6 leading-relaxed">
 
-                        <?= $p['description'] ?>Giày chạy bộ hiệu suất cao với công nghệ đệm hơi tiên tiến, giúp giảm chấn thương khi tập luyện. Thiết kế ergonomic phù hợp với mọi hình dáng bàn chân.>>>>>>> 06b1c931821ced6ee0cdfb5237f5b45bf9617aed
+                        <?= $p['description'] ?>Giày chạy bộ hiệu suất cao với công nghệ đệm hơi tiên tiến, giúp giảm chấn thương khi tập luyện. Thiết kế ergonomic phù hợp với mọi hình dáng bàn chân.
                     </p>
 
                     <!-- Size Selection -->

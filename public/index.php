@@ -224,9 +224,6 @@ $p = $products[0];
                 <div class="flex justify-center">
 
                     <img src="images/<?= $p['image'] ?>" alt="Giày thể thao mới" class="w-full max-w-sm rounded-2xl shadow-lg">
-
-                    <img src="/images/<?= $products[0]['image'] ?>" alt="Giày thể thao mới" class="w-full max-w-sm rounded-2xl shadow-lg">
-
                 </div>
             </div>
         </div>
@@ -317,7 +314,7 @@ $p = $products[0];
 
 
                 <!-- Product Card 1 -->
-                <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md">
+                <<!-- div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md">
                     <div class="relative h-64 bg-gray-200 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=400&fit=crop" alt="Giày thể thao" class="w-full h-full object-cover">
                         <span class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-lg text-sm font-semibold">-30%</span>
@@ -337,10 +334,10 @@ $p = $products[0];
                             <button class="flex-1 btn-primary text-sm py-2">Thêm giỏ</button>
                         </div>
                     </div>
-                </div>
+            </div> -->
 
-                <!-- Product Card 2 -->
-                <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md">
+            <!-- Product Card 2 -->
+            <!-- <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md">
                     <div class="relative h-64 bg-gray-200 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&h=400&fit=crop" alt="Giày thể thao" class="w-full h-full object-cover">
                         <span class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-lg text-sm font-semibold">-20%</span>
@@ -360,10 +357,10 @@ $p = $products[0];
                             <button class="flex-1 btn-primary text-sm py-2">Thêm giỏ</button>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <!-- Product Card 3 -->
-                <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md">
+            <!-- Product Card 3 -->
+            <!-- <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md">
                     <div class="relative h-64 bg-gray-200 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1525966222134-fceba0dea025?w=300&h=400&fit=crop" alt="Giày thể thao" class="w-full h-full object-cover">
                         <span class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-lg text-sm font-semibold">-40%</span>
@@ -383,10 +380,10 @@ $p = $products[0];
                             <button class="flex-1 btn-primary text-sm py-2">Thêm giỏ</button>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <!-- Product Card 4 -->
-                <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md">
+            <!-- Product Card 4 -->
+            <!-- <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md">
                     <div class="relative h-64 bg-gray-200 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=300&h=400&fit=crop" alt="Giày thể thao" class="w-full h-full object-cover">
                         <span class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-lg text-sm font-semibold">-15%</span>
@@ -407,8 +404,8 @@ $p = $products[0];
                         </div>
                     </div>
                 </div>
-
-            </div>
+ -->
+        </div>
         </div>
     </section>
 
