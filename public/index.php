@@ -222,22 +222,22 @@ $p = $products[0];
 
                 <!-- Hero Image -->
                 <div class="flex justify-center">
-                    <<<<<<< HEAD
-                        <img src="images/<?= $p['image'] ?>" alt="Giày thể thao mới" class="w-full max-w-sm rounded-2xl shadow-lg">
-                        =======
-                        <img src="/images/<?= $products[0]['image'] ?>" alt="Giày thể thao mới" class="w-full max-w-sm rounded-2xl shadow-lg">
-                        >>>>>>> 06b1c931821ced6ee0cdfb5237f5b45bf9617aed
+
+                    <img src="images/<?= $p['image'] ?>" alt="Giày thể thao mới" class="w-full max-w-sm rounded-2xl shadow-lg">
+
+                    <img src="/images/<?= $products[0]['image'] ?>" alt="Giày thể thao mới" class="w-full max-w-sm rounded-2xl shadow-lg">
+
                 </div>
             </div>
         </div>
     </section>
 
     <!-- PRODUCT CATEGORIES -->
-    <section id="collections" class="py-16 bg-white">
+    <!--  <section id="collections" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Danh Mục Sản Phẩm</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Category 1 -->
+                
                 <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md cursor-pointer">
                     <div class="h-48 bg-blue-100 flex items-center justify-center">
                         <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop" alt="Giày thể thao" class="w-full h-full object-cover">
@@ -248,7 +248,7 @@ $p = $products[0];
                     </div>
                 </div>
 
-                <!-- Category 2 -->
+                
                 <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md cursor-pointer">
                     <div class="h-48 bg-orange-100 flex items-center justify-center">
                         <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop" alt="Giày chạy bộ" class="w-full h-full object-cover">
@@ -259,7 +259,7 @@ $p = $products[0];
                     </div>
                 </div>
 
-                <!-- Category 3 -->
+                
                 <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md cursor-pointer">
                     <div class="h-48 bg-green-100 flex items-center justify-center">
                         <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop" alt="Giày bóng rổ" class="w-full h-full object-cover">
@@ -270,7 +270,7 @@ $p = $products[0];
                     </div>
                 </div>
 
-                <!-- Category 4 -->
+                
                 <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md cursor-pointer">
                     <div class="h-48 bg-purple-100 flex items-center justify-center">
                         <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop" alt="Giày thời trang" class="w-full h-full object-cover">
@@ -282,15 +282,15 @@ $p = $products[0];
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- FEATURED PRODUCTS -->
     <section id="products" class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Sản Phẩm Nổi Bật</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <<<<<<< HEAD
-                    <?php foreach ($products as $product): ?>
+
+                <?php foreach ($products as $product): ?>
                     <!-- Product Card 1 -->
                     <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md">
                         <div class="relative h-64 bg-gray-200 overflow-hidden">
@@ -315,7 +315,7 @@ $p = $products[0];
                     </div>
                 <?php endforeach; ?>
 
-                =======
+
                 <!-- Product Card 1 -->
                 <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md">
                     <div class="relative h-64 bg-gray-200 overflow-hidden">
@@ -407,7 +407,7 @@ $p = $products[0];
                         </div>
                     </div>
                 </div>
-                >>>>>>> 06b1c931821ced6ee0cdfb5237f5b45bf9617aed
+
             </div>
         </div>
     </section>
@@ -422,12 +422,12 @@ $p = $products[0];
     </section>
 
     <!-- PRODUCT DETAIL SECTION -->
-    <section id="product-detail" class="py-16 bg-white">
+    <!-- <section id="product-detail" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold mb-12 text-gray-900">Chi Tiết Sản Phẩm</h2>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-                <!-- Product Images -->
+
                 <div>
                     <div class="mb-4 bg-gray-100 rounded-2xl overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop" alt="Giày chi tiết" class="w-full h-96 object-cover">
@@ -440,7 +440,7 @@ $p = $products[0];
                     </div>
                 </div>
 
-                <!-- Product Details -->
+
                 <div>
                     <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Giày Chạy Swift Pro 2026</h1>
                     <div class="flex items-center gap-3 mb-4">
@@ -458,7 +458,7 @@ $p = $products[0];
                         Giày chạy bộ hiệu suất cao với công nghệ đệm hơi tiên tiến, giúp giảm chấn thương khi tập luyện. Thiết kế ergonomic phù hợp với mọi hình dáng bàn chân.
                     </p>
 
-                    <!-- Size Selection -->
+
                     <div class="mb-6">
                         <label class="block text-sm font-semibold text-gray-900 mb-3">Chọn Size:</label>
                         <div class="flex flex-wrap gap-3">
@@ -470,7 +470,7 @@ $p = $products[0];
                         </div>
                     </div>
 
-                    <!-- Color Selection -->
+
                     <div class="mb-6">
                         <label class="block text-sm font-semibold text-gray-900 mb-3">Chọn Màu:</label>
                         <div class="flex gap-4">
@@ -480,7 +480,7 @@ $p = $products[0];
                         </div>
                     </div>
 
-                    <!-- Quantity -->
+
                     <div class="mb-8">
                         <label class="block text-sm font-semibold text-gray-900 mb-3">Số Lượng:</label>
                         <div class="flex items-center gap-4 border border-gray-300 rounded-lg w-fit">
@@ -490,7 +490,7 @@ $p = $products[0];
                         </div>
                     </div>
 
-                    <!-- Action Buttons -->
+
                     <div class="flex flex-col sm:flex-row gap-4">
                         <button class="btn-primary flex-1 text-lg">Thêm vào Giỏ Hàng</button>
                         <button class="btn-accent flex-1 text-lg">Mua Ngay</button>
@@ -498,7 +498,7 @@ $p = $products[0];
                 </div>
             </div>
 
-            <!-- Product Tabs -->
+
             <div class="border-b border-gray-200 mb-8">
                 <div class="flex gap-8">
                     <button class="tab-button active" onclick="showTab(event, 'description')">Mô Tả</button>
@@ -507,7 +507,7 @@ $p = $products[0];
                 </div>
             </div>
 
-            <!-- Tab Contents -->
+
             <div id="description" class="tab-content mb-12">
                 <h3 class="text-xl font-bold text-gray-900 mb-4">Mô Tả Chi Tiết</h3>
                 <p class="text-gray-600 leading-relaxed mb-4">
@@ -566,7 +566,7 @@ $p = $products[0];
                 </div>
             </div>
 
-            <!-- Related Products -->
+
             <div class="mt-16">
                 <h3 class="text-2xl font-bold text-gray-900 mb-8">Sản Phẩm Liên Quan</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -612,7 +612,7 @@ $p = $products[0];
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- FOOTER -->
     <footer id="contact" class="bg-dark text-white py-12">

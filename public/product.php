@@ -219,11 +219,11 @@ if (isset($_GET['product_id'])) {
                 <!-- Product Images -->
                 <div>
                     <div class="mb-4 bg-gray-100 rounded-2xl overflow-hidden">
-                        <<<<<<< HEAD
-                            <img src="images/<?= $p['image'] ?>" alt="Giày chi tiết" class="w-full h-96 object-cover">
-                            =======
-                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop" alt="Giày chi tiết" class="w-full h-96 object-cover">
-                            >>>>>>> 06b1c931821ced6ee0cdfb5237f5b45bf9617aed
+
+                        <img src="images/<?= $p['image'] ?>" alt="Giày chi tiết" class="w-full h-96 object-cover">
+                        =======
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop" alt="Giày chi tiết" class="w-full h-96 object-cover">
+
                     </div>
                     <div class="grid grid-cols-4 gap-3">
                         <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=150&h=150&fit=crop" alt="Thumb 1" class="w-full rounded-lg cursor-pointer hover:opacity-80 transition border-2 border-primary">
@@ -235,69 +235,69 @@ if (isset($_GET['product_id'])) {
 
                 <!-- Product Details -->
                 <div>
-                    <<<<<<< HEAD
-                        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2"><?= $p['product_name'] ?></h1>
-                        =======
-                        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Giày Chạy Swift Pro 2026</h1>
-                        >>>>>>> 06b1c931821ced6ee0cdfb5237f5b45bf9617aed
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="text-2xl text-yellow-500">★★★★★</span>
-                            <span class="text-gray-600">(128 đánh giá)</span>
+
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2"><?= $p['product_name'] ?></h1>
+                    =======
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Giày Chạy Swift Pro 2026</h1>
+
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-2xl text-yellow-500">★★★★★</span>
+                        <span class="text-gray-600">(128 đánh giá)</span>
+                    </div>
+
+                    <div class="flex items-center gap-4 mb-6">
+
+                        <span class="text-4xl font-bold text-primary"><?= $p['price_id'] ?></span>
+
+
+                        <span class="text-4xl font-bold text-primary">1.290.000₫</span>
+                        <span class="text-xl line-through text-gray-500">1.850.000₫</span>
+
+                        <span class="bg-accent text-white px-3 py-1 rounded-lg font-semibold">-30%</span>
+                    </div>
+
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+
+                        <?= $p['description'] ?>Giày chạy bộ hiệu suất cao với công nghệ đệm hơi tiên tiến, giúp giảm chấn thương khi tập luyện. Thiết kế ergonomic phù hợp với mọi hình dáng bàn chân.>>>>>>> 06b1c931821ced6ee0cdfb5237f5b45bf9617aed
+                    </p>
+
+                    <!-- Size Selection -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-semibold text-gray-900 mb-3">Chọn Size:</label>
+                        <div class="flex flex-wrap gap-3">
+                            <button class="size-btn selected" onclick="this.classList.toggle('selected')">38</button>
+                            <button class="size-btn" onclick="this.classList.toggle('selected')">39</button>
+                            <button class="size-btn" onclick="this.classList.toggle('selected')">40</button>
+                            <button class="size-btn" onclick="this.classList.toggle('selected')">41</button>
+                            <button class="size-btn" onclick="this.classList.toggle('selected')">42</button>
                         </div>
+                    </div>
 
-                        <div class="flex items-center gap-4 mb-6">
-                            <<<<<<< HEAD
-                                <span class="text-4xl font-bold text-primary"><?= $p['price_id'] ?></span>
-
-                                =======
-                                <span class="text-4xl font-bold text-primary">1.290.000₫</span>
-                                <span class="text-xl line-through text-gray-500">1.850.000₫</span>
-                                >>>>>>> 06b1c931821ced6ee0cdfb5237f5b45bf9617aed
-                                <span class="bg-accent text-white px-3 py-1 rounded-lg font-semibold">-30%</span>
+                    <!-- Color Selection -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-semibold text-gray-900 mb-3">Chọn Màu:</label>
+                        <div class="flex gap-4">
+                            <div class="color-dot selected" style="background-color: #1e40af;" onclick="this.classList.toggle('selected')"></div>
+                            <div class="color-dot" style="background-color: #dc2626;" onclick="this.classList.toggle('selected')"></div>
+                            <div class="color-dot" style="background-color: #16a34a;" onclick="this.classList.toggle('selected')"></div>
                         </div>
+                    </div>
 
-                        <p class="text-gray-600 mb-6 leading-relaxed">
-                            <<<<<<< HEAD
-                                <?= $p['description'] ?>=======Giày chạy bộ hiệu suất cao với công nghệ đệm hơi tiên tiến, giúp giảm chấn thương khi tập luyện. Thiết kế ergonomic phù hợp với mọi hình dáng bàn chân.>>>>>>> 06b1c931821ced6ee0cdfb5237f5b45bf9617aed
-                        </p>
-
-                        <!-- Size Selection -->
-                        <div class="mb-6">
-                            <label class="block text-sm font-semibold text-gray-900 mb-3">Chọn Size:</label>
-                            <div class="flex flex-wrap gap-3">
-                                <button class="size-btn selected" onclick="this.classList.toggle('selected')">38</button>
-                                <button class="size-btn" onclick="this.classList.toggle('selected')">39</button>
-                                <button class="size-btn" onclick="this.classList.toggle('selected')">40</button>
-                                <button class="size-btn" onclick="this.classList.toggle('selected')">41</button>
-                                <button class="size-btn" onclick="this.classList.toggle('selected')">42</button>
-                            </div>
+                    <!-- Quantity -->
+                    <div class="mb-8">
+                        <label class="block text-sm font-semibold text-gray-900 mb-3">Số Lượng:</label>
+                        <div class="flex items-center gap-4 border border-gray-300 rounded-lg w-fit">
+                            <button class="px-4 py-2 text-xl text-gray-600 hover:text-primary transition">−</button>
+                            <span class="text-lg font-semibold w-8 text-center">1</span>
+                            <button class="px-4 py-2 text-xl text-gray-600 hover:text-primary transition">+</button>
                         </div>
+                    </div>
 
-                        <!-- Color Selection -->
-                        <div class="mb-6">
-                            <label class="block text-sm font-semibold text-gray-900 mb-3">Chọn Màu:</label>
-                            <div class="flex gap-4">
-                                <div class="color-dot selected" style="background-color: #1e40af;" onclick="this.classList.toggle('selected')"></div>
-                                <div class="color-dot" style="background-color: #dc2626;" onclick="this.classList.toggle('selected')"></div>
-                                <div class="color-dot" style="background-color: #16a34a;" onclick="this.classList.toggle('selected')"></div>
-                            </div>
-                        </div>
-
-                        <!-- Quantity -->
-                        <div class="mb-8">
-                            <label class="block text-sm font-semibold text-gray-900 mb-3">Số Lượng:</label>
-                            <div class="flex items-center gap-4 border border-gray-300 rounded-lg w-fit">
-                                <button class="px-4 py-2 text-xl text-gray-600 hover:text-primary transition">−</button>
-                                <span class="text-lg font-semibold w-8 text-center">1</span>
-                                <button class="px-4 py-2 text-xl text-gray-600 hover:text-primary transition">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Action Buttons -->
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <button class="btn-primary flex-1 text-lg">Thêm vào Giỏ Hàng</button>
-                            <button class="btn-accent flex-1 text-lg">Mua Ngay</button>
-                        </div>
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="btn-primary flex-1 text-lg">Thêm vào Giỏ Hàng</button>
+                        <button class="btn-accent flex-1 text-lg">Mua Ngay</button>
+                    </div>
                 </div>
             </div>
 
@@ -370,7 +370,7 @@ if (isset($_GET['product_id'])) {
             </div>
 
             <!-- Related Products -->
-            <<<<<<< HEAD=======<div class="mt-16">
+            <div class="mt-16">
                 <h3 class="text-2xl font-bold text-gray-900 mb-8">Sản Phẩm Liên Quan</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md">
@@ -413,8 +413,8 @@ if (isset($_GET['product_id'])) {
                         </div>
                     </div>
                 </div>
-        </div>
-        >>>>>>> 06b1c931821ced6ee0cdfb5237f5b45bf9617aed
+            </div>
+
         </div>
     </section>
 </body>
