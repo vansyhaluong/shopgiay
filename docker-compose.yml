@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8
+    container_name: shopgiay_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: shopgiay
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./shopgiay.sql:/docker-entrypoint-initdb.d/shopgiay.sql
