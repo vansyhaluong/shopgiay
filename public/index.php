@@ -6,13 +6,6 @@ $sql = "select * from products";
 $products = $db->select($sql);
 $p = $products[0];
 
-
-require_once "./public/Database.php";
-$db = new Database();
-$sql = "select * from products";
-$products = $db->select($sql);
-var_dump($products);
-
 ?>
 
 <!DOCTYPE html>
