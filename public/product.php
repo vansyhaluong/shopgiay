@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 require_once "Database.php";
 
 $db = new Database();
@@ -15,6 +16,8 @@ if (isset($_GET['product_id'])) {
         $p = $product[0];
     }
 }
+=======
+>>>>>>> 06b1c931821ced6ee0cdfb5237f5b45bf9617aed
 
 ?>
 
@@ -217,7 +220,11 @@ if (isset($_GET['product_id'])) {
                 <!-- Product Images -->
                 <div>
                     <div class="mb-4 bg-gray-100 rounded-2xl overflow-hidden">
+<<<<<<< HEAD
                         <img src="images/<?= $p['image'] ?>" alt="Giày chi tiết" class="w-full h-96 object-cover">
+=======
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&h=600&fit=crop" alt="Giày chi tiết" class="w-full h-96 object-cover">
+>>>>>>> 06b1c931821ced6ee0cdfb5237f5b45bf9617aed
                     </div>
                     <div class="grid grid-cols-4 gap-3">
                         <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=150&h=150&fit=crop" alt="Thumb 1" class="w-full rounded-lg cursor-pointer hover:opacity-80 transition border-2 border-primary">
@@ -229,20 +236,33 @@ if (isset($_GET['product_id'])) {
 
                 <!-- Product Details -->
                 <div>
+<<<<<<< HEAD
                     <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2"><?= $p['product_name'] ?></h1>
+=======
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Giày Chạy Swift Pro 2026</h1>
+>>>>>>> 06b1c931821ced6ee0cdfb5237f5b45bf9617aed
                     <div class="flex items-center gap-3 mb-4">
                         <span class="text-2xl text-yellow-500">★★★★★</span>
                         <span class="text-gray-600">(128 đánh giá)</span>
                     </div>
 
                     <div class="flex items-center gap-4 mb-6">
+<<<<<<< HEAD
                         <span class="text-4xl font-bold text-primary"><?= $p['price_id'] ?></span>
 
+=======
+                        <span class="text-4xl font-bold text-primary">1.290.000₫</span>
+                        <span class="text-xl line-through text-gray-500">1.850.000₫</span>
+>>>>>>> 06b1c931821ced6ee0cdfb5237f5b45bf9617aed
                         <span class="bg-accent text-white px-3 py-1 rounded-lg font-semibold">-30%</span>
                     </div>
 
                     <p class="text-gray-600 mb-6 leading-relaxed">
+<<<<<<< HEAD
                         <?= $p['description'] ?>
+=======
+                        Giày chạy bộ hiệu suất cao với công nghệ đệm hơi tiên tiến, giúp giảm chấn thương khi tập luyện. Thiết kế ergonomic phù hợp với mọi hình dáng bàn chân.
+>>>>>>> 06b1c931821ced6ee0cdfb5237f5b45bf9617aed
                     </p>
 
                     <!-- Size Selection -->
@@ -354,7 +374,54 @@ if (isset($_GET['product_id'])) {
             </div>
 
             <!-- Related Products -->
+<<<<<<< HEAD
 
+=======
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8">Sản Phẩm Liên Quan</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md">
+                        <div class="h-48 bg-gray-200 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&h=300&fit=crop" alt="Giày liên quan" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-gray-900 mb-2">Giày Bóng Rổ Air Jump</h4>
+                            <p class="text-2xl font-bold text-primary">1.890.000₫</p>
+                        </div>
+                    </div>
+
+                    <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md">
+                        <div class="h-48 bg-gray-200 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1525966222134-fceba0dea025?w=300&h=300&fit=crop" alt="Giày liên quan" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-gray-900 mb-2">Giày Thời Trang Urban</h4>
+                            <p class="text-2xl font-bold text-primary">899.000₫</p>
+                        </div>
+                    </div>
+
+                    <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md">
+                        <div class="h-48 bg-gray-200 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=300&h=300&fit=crop" alt="Giày liên quan" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-gray-900 mb-2">Giày Thể Thao Classic</h4>
+                            <p class="text-2xl font-bold text-primary">1.590.000₫</p>
+                        </div>
+                    </div>
+
+                    <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md">
+                        <div class="h-48 bg-gray-200 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop" alt="Giày liên quan" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="font-bold text-gray-900 mb-2">Giày Chạy Swift Pro</h4>
+                            <p class="text-2xl font-bold text-primary">1.290.000₫</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+>>>>>>> 06b1c931821ced6ee0cdfb5237f5b45bf9617aed
         </div>
     </section>
 </body>

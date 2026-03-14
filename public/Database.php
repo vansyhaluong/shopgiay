@@ -9,10 +9,11 @@ class Database
     public function __construct()
     {
         $this->conn = new mysqli(
-            $this->host,
-            $this->user,
-            $this->pass,
-            $this->dbname
+            "switchyard.proxy.rlwy.net",
+            "root",
+            "RFYgypHcepPGUWFiJVlaHumeMEucqZGO",
+            "railway",
+            54288
         );
         if ($this->conn->connect_error) {
             die("Kết nối thất bại:" . $this->conn->connect_error);

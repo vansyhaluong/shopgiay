@@ -1,10 +1,18 @@
 <?php
+<<<<<<< HEAD
 require_once "Database.php";
 $db = new Database();
 $sql = "select * from products";
 $products = $db->select($sql);
 $p = $products[0];
 
+=======
+require_once "./public/Database.php";
+$db = new Database();
+$sql = "select * from products";
+$products = $db->select($sql);
+var_dump($products);
+>>>>>>> 06b1c931821ced6ee0cdfb5237f5b45bf9617aed
 ?>
 
 <!DOCTYPE html>
@@ -221,7 +229,11 @@ $p = $products[0];
 
                 <!-- Hero Image -->
                 <div class="flex justify-center">
+<<<<<<< HEAD
                     <img src="images/<?= $p['image'] ?>" alt="Giày thể thao mới" class="w-full max-w-sm rounded-2xl shadow-lg">
+=======
+                    <img src="/images/<?= $products[0]['image'] ?>" alt="Giày thể thao mới" class="w-full max-w-sm rounded-2xl shadow-lg">
+>>>>>>> 06b1c931821ced6ee0cdfb5237f5b45bf9617aed
                 </div>
             </div>
         </div>
@@ -284,6 +296,7 @@ $p = $products[0];
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Sản Phẩm Nổi Bật</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<<<<<<< HEAD
                 <?php foreach ($products as $product): ?>
                     <!-- Product Card 1 -->
                     <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md">
@@ -309,6 +322,99 @@ $p = $products[0];
                     </div>
                 <?php endforeach; ?>
 
+=======
+                <!-- Product Card 1 -->
+                <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md">
+                    <div class="relative h-64 bg-gray-200 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=400&fit=crop" alt="Giày thể thao" class="w-full h-full object-cover">
+                        <span class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-lg text-sm font-semibold">-30%</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-900">Giày Chạy Swift Pro</h3>
+                        <div class="flex items-center gap-2 my-2">
+                            <span class="text-yellow-500">★★★★★</span>
+                            <span class="text-sm text-gray-600">(128)</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-2xl font-bold text-primary">1.290.000₫</span>
+                            <span class="text-sm line-through text-gray-500">1.850.000₫</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="flex-1 btn-secondary text-sm py-2">Chi tiết</button>
+                            <button class="flex-1 btn-primary text-sm py-2">Thêm giỏ</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md">
+                    <div class="relative h-64 bg-gray-200 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&h=400&fit=crop" alt="Giày thể thao" class="w-full h-full object-cover">
+                        <span class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-lg text-sm font-semibold">-20%</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-900">Giày Bóng Rổ Air Jump</h3>
+                        <div class="flex items-center gap-2 my-2">
+                            <span class="text-yellow-500">★★★★☆</span>
+                            <span class="text-sm text-gray-600">(95)</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-2xl font-bold text-primary">1.890.000₫</span>
+                            <span class="text-sm line-through text-gray-500">2.360.000₫</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="flex-1 btn-secondary text-sm py-2">Chi tiết</button>
+                            <button class="flex-1 btn-primary text-sm py-2">Thêm giỏ</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md">
+                    <div class="relative h-64 bg-gray-200 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1525966222134-fceba0dea025?w=300&h=400&fit=crop" alt="Giày thể thao" class="w-full h-full object-cover">
+                        <span class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-lg text-sm font-semibold">-40%</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-900">Giày Thời Trang Urban</h3>
+                        <div class="flex items-center gap-2 my-2">
+                            <span class="text-yellow-500">★★★★★</span>
+                            <span class="text-sm text-gray-600">(156)</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-2xl font-bold text-primary">899.000₫</span>
+                            <span class="text-sm line-through text-gray-500">1.500.000₫</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="flex-1 btn-secondary text-sm py-2">Chi tiết</button>
+                            <button class="flex-1 btn-primary text-sm py-2">Thêm giỏ</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md">
+                    <div class="relative h-64 bg-gray-200 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=300&h=400&fit=crop" alt="Giày thể thao" class="w-full h-full object-cover">
+                        <span class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-lg text-sm font-semibold">-15%</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-900">Giày Thể Thao Classic</h3>
+                        <div class="flex items-center gap-2 my-2">
+                            <span class="text-yellow-500">★★★★☆</span>
+                            <span class="text-sm text-gray-600">(83)</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-2xl font-bold text-primary">1.590.000₫</span>
+                            <span class="text-sm line-through text-gray-500">1.870.000₫</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="flex-1 btn-secondary text-sm py-2">Chi tiết</button>
+                            <button class="flex-1 btn-primary text-sm py-2">Thêm giỏ</button>
+                        </div>
+                    </div>
+                </div>
+>>>>>>> 06b1c931821ced6ee0cdfb5237f5b45bf9617aed
             </div>
         </div>
     </section>
