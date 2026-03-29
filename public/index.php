@@ -289,25 +289,31 @@ $p = $products[0];
 
                 <?php foreach ($products as $product): ?>
                     <!-- Product Card 1 -->
-                    <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md">
+                    <div class="hover-lift bg-white rounded-2xl overflow-hidden shadow-md cursor-pointer"
+                        onclick="window.location.href='product.php?product_id=<?= $product['product_id'] ?>'">
+
                         <div class="relative h-64 bg-gray-200 overflow-hidden">
                             <img src="images/<?= $product['image'] ?>" alt="Giày thể thao" class="w-full h-full object-cover">
                             <span class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-lg text-sm font-semibold">-30%</span>
                         </div>
+
                         <div class="p-4">
                             <h3 class="font-bold text-lg text-gray-900"><?= $product['product_name'] ?></h3>
+
                             <div class="flex items-center gap-2 my-2">
                                 <span class="text-yellow-500">★★★★★</span>
                                 <span class="text-sm text-gray-600">(128)</span>
                             </div>
+
                             <div class="flex items-center gap-2 mb-4">
                                 <span class="text-2xl font-bold text-primary"><?= $product['price_id'] ?>₫</span>
+                            </div>
 
-                            </div>
-                            <div class="flex gap-2">
-                                <a class="flex-1 btn-secondary text-sm py-2" href="product.php?product_id=<?= $product['product_id'] ?>">Chi tiết</a>
-                                <button class="flex-1 btn-primary text-sm py-2">Thêm giỏ</button>
-                            </div>
+                            <!-- chỉ giữ nút thêm giỏ -->
+                            <button onclick="event.stopPropagation()"
+                                class="w-full py-2 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-medium hover:scale-105 transition shadow-md">
+                                🛒 Thêm vào giỏ
+                            </button>
                         </div>
                     </div>
                 <?php endforeach; ?>
