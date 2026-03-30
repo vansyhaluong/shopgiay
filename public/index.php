@@ -310,10 +310,10 @@ $p = $products[0];
                             </div>
 
                             <!-- chỉ giữ nút thêm giỏ -->
-                            <button onclick="event.stopPropagation()"
+                            <!-- <button onclick="event.stopPropagation()"
                                 class="w-full py-2 rounded-xl bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-medium hover:scale-105 transition shadow-md">
                                 🛒 Thêm vào giỏ
-                            </button>
+                            </button> -->
                         </div>
                     </div>
                 <?php endforeach; ?>
