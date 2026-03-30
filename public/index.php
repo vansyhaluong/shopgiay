@@ -184,7 +184,7 @@ $p = $products[0];
                 <nav class="hidden md:flex items-center gap-8 flex-1 justify-center">
                     <a href="#home" class="text-gray-700 font-medium hover:text-primary transition">Trang chủ</a>
                     <a href="#products" class="text-gray-700 font-medium hover:text-primary transition">Sản phẩm</a>
-                    <a href="#collections" class="text-gray-700 font-medium hover:text-primary transition">Bộ sưu tập</a>
+                    <a href="productmanagement.php" class="text-gray-700 font-medium hover:text-primary transition">Quản lý sản phẩm</a>
                     <a href="#promo" class="text-gray-700 font-medium hover:text-primary transition">Khuyến mãi</a>
                     <a href="#contact" class="text-gray-700 font-medium hover:text-primary transition">Liên hệ</a>
                 </nav>
@@ -195,7 +195,7 @@ $p = $products[0];
                         <input type="text" placeholder="Tìm kiếm..." class="bg-transparent outline-none text-sm w-40 placeholder-gray-500">
                         <span class="text-gray-400">🔍</span>
                     </div>
-                    <button class="text-2xl hover:text-primary transition">🛒</button>
+                    <a href="cart.php" class="text-2xl hover:text-primary transition">🛒</a>
                     <button class="md:hidden text-2xl">☰</button>
                 </div>
             </div>

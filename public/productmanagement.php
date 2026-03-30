@@ -164,7 +164,7 @@ $products = $db->select($sql);
             <div class="flex justify-between items-center py-4">
                 <a href="index.html" class="text-2xl font-bold text-blue-600">SHOE STORE</a>
                 <nav class="hidden md:flex gap-8">
-                    <a href="index.html" class="text-gray-600 hover:text-blue-600 transition">Trang Chủ</a>
+                    <a href="index.php" class="text-gray-600 hover:text-blue-600 transition">Trang Chủ</a>
                     <a href="admin.html" class="text-blue-600 font-semibold">Quản Lý</a>
                 </nav>
                 <a href="cart.html" class="text-2xl hover:text-blue-600 transition">🛒</a>

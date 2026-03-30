@@ -48,6 +48,13 @@ if (!empty($_SESSION['cart'])) {
 $subtotal = $total;
 $shipping = ($subtotal >= 5000000) ? 0 : 30000;
 $finalTotal = $subtotal + $shipping;
+$totalQuantity = 0;
+
+if (isset($_SESSION['cart'])) {
+    foreach ($_SESSION['cart'] as $item) {
+        $totalQuantity += $item['quantity'];
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -177,9 +184,11 @@ $finalTotal = $subtotal + $shipping;
                 </nav>
             </div>
             <div class="flex items-center gap-4">
-                <a href="cart.html" class="relative text-gray-700 hover:text-blue-600 transition text-2xl">
+                <a href="cart.php" class="relative text-gray-700 hover:text-blue-600 transition text-2xl">
                     🛒
-                    <span class="absolute -top-2 -right-2 bg-orange-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">3</span>
+                    <span class="absolute -top-2 -right-2 bg-orange-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
+                        <?= $totalQuantity ?>
+                    </span>
                 </a>
             </div>
         </div>
