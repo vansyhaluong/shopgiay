@@ -209,7 +209,7 @@ $p = $products[0];
 
                     <?php else: ?>
 
-                        <a href="login.php"
+                        <a href="Login.php"
                             class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">
                             Đăng nhập
                         </a>
