@@ -16,7 +16,20 @@ if (isset($_GET['product_id'])) {
         $p = $product[0];
     }
 }
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name    = $_POST['name'] ?? 'Người dùng';
+    $email   = $_POST['email'] ?? '';
+    $content = $_POST['content'] ?? '';
 
+    if ($content) {
+        $sql = "INSERT INTO Comments (product_id, Content, CreatedAt) VALUES (?, ?, NOW())";
+        $db->execute($sql, "is", [$id, $content]);
+    }
+}
+
+// Lấy comment từ DB
+$sql = "SELECT * FROM Comments WHERE product_id = ? ORDER BY CreatedAt DESC";
+$comments = $db->select($sql, "i", [$id]);
 
 ?>
 
@@ -228,7 +241,7 @@ if (isset($_GET['product_id'])) {
 
                 <!-- 📝 THÔNG TIN + FORM -->
                 <div class="w-full lg:w-1/2">
-                    <form method="POST" action="cart.php">
+                    <form method="POST" action="addtocart.php">
 
                         <input type="hidden" name="product_id" value="<?= $p['product_id'] ?>">
                         <input type="hidden" name="product_name" value="<?= $p['product_name'] ?>">
@@ -341,21 +354,37 @@ if (isset($_GET['product_id'])) {
 
             <div id="reviews" class="tab-content mb-12 hidden">
                 <h3 class="text-xl font-bold text-gray-900 mb-6">Đánh Giá Từ Khách Hàng</h3>
-                <div class="space-y-6">
-                    <div class="border-b border-gray-200 pb-6">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="font-semibold text-gray-900">Nguyễn Văn A</span>
-                            <span class="text-yellow-500">★★★★★</span>
+                <div class="bg-gray-50 rounded-lg p-6 mb-8">
+                    <h4 class="font-semibold text-gray-900 mb-4">Để Lại Bình Luận</h4>
+                    <form id="commentForm" class="space-y-4">
+                        <!-- <input type="text" name="name" placeholder="Tên của bạn *" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"> -->
+
+                        <textarea name="content" placeholder="Bình luận của bạn..." rows="4" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-vertical"></textarea>
+
+                        <input type="hidden" name="product_id" value="<?= $id ?>"> <!-- ID sản phẩm -->
+
+                        <button type="submit" class="btn-primary">Gửi Bình Luận</button>
+                    </form>
+                </div>
+
+                <!-- Comments List -->
+                <div class="space-y-6" id="commentsList">̣
+                    <?php foreach ($comments as $c): ?>
+                        <div class="border-b border-gray-200 pb-6">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-semibold">
+                                    NN
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900"><?= htmlspecialchars($c['Name'] ?? 'Người dùng') ?></p>
+                                    <p class="text-sm text-gray-500"><?= $c['CreatedAt'] ?></p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 ml-13"><?= htmlspecialchars($c['Content']) ?></p>
                         </div>
-                        <p class="text-gray-600">"Giày rất thoải mái, tôi chạy được 10km mà không cảm thấy chân mệt. Chất lượng tuyệt vời!"</p>
-                    </div>
-                    <div class="border-b border-gray-200 pb-6">
-                        <div class="flex items-center gap-2 mb-2">
-                            <span class="font-semibold text-gray-900">Trần Thị B</span>
-                            <span class="text-yellow-500">★★★★☆</span>
-                        </div>
-                        <p class="text-gray-600">"Giày rất đẹp, nhưng mất một chút thời gian để quen. Giá cả hợp lý cho chất lượng này."</p>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
 
@@ -422,6 +451,51 @@ if (isset($_GET['product_id'])) {
             qty.value = parseInt(qty.value) - 1;
         }
     };
+
+    function showTab(event, tabName) {
+        const contents = document.querySelectorAll('.tab-content');
+        contents.forEach(content => content.classList.add('hidden'));
+
+        const buttons = document.querySelectorAll('.tab-button');
+        buttons.forEach(btn => btn.classList.remove('active'));
+
+        document.getElementById(tabName).classList.remove('hidden');
+        event.target.classList.add('active');
+    }
+    // Submit comments
+    document.getElementById('commentForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // chặn reload trang
+
+        const formData = new FormData(this);
+
+        fetch('add_comment.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(res => res.json())
+            .then(comment => {
+                const list = document.getElementById('commentsList');
+
+                const div = document.createElement('div');
+                div.className = 'border-b border-gray-200 pb-2';
+                div.innerHTML = `
+            <div class="flex items-center gap-2 mb-1">
+                <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-semibold">
+                    NN
+                </div>
+                <div>
+                    <p class="font-semibold text-gray-900">Người dùng</p>
+                    <p class="text-sm text-gray-500">${comment.CreatedAt}</p>
+                </div>
+            </div>
+            <p class="text-gray-600 ml-12">${comment.Content}</p>
+        `;
+                list.prepend(div);
+
+                this.reset(); // reset form
+            })
+            .catch(err => console.error(err));
+    });
 </script>
 
 </html>

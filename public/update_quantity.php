@@ -26,18 +26,8 @@ if (isset($_POST['product_id']) && isset($_POST['change'])) {
     }
 }
 
-// tính tổng
-$total = 0;
-foreach ($_SESSION['cart'] as $item) {
-    $total += $item['price_id'] * $item['quantity'];
-}
-
-$shipping = ($total >= 5000000) ? 0 : 30000;
-$finalTotal = $total + $shipping;
-
 echo json_encode([
-    'quantity' => $newQuantity,
-    'total' => number_format($finalTotal, 0, ',', '.') . '₫'
+    'quantity' => $newQuantity
 ]);
 
 exit;

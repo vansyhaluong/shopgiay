@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once "Database.php";
 $db = new Database();
 $sql = "select * from products";
@@ -191,13 +191,41 @@ $p = $products[0];
 
                 <!-- Search & Cart -->
                 <div class="flex items-center gap-4 ml-auto">
+
+                    <!-- Search -->
                     <div class="hidden sm:flex items-center bg-gray-100 rounded-lg px-3 py-2">
                         <input type="text" placeholder="Tìm kiếm..." class="bg-transparent outline-none text-sm w-40 placeholder-gray-500">
                         <span class="text-gray-400">🔍</span>
                     </div>
+
+                    <!-- Login Button -->
+
+                    <?php if (isset($_SESSION["user_id"])): ?>
+
+                        <a href="logout.php"
+                            class="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600">
+                            Đăng xuất
+                        </a>
+
+                    <?php else: ?>
+
+                        <a href="login.php"
+                            class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600">
+                            Đăng nhập
+                        </a>
+
+                    <?php endif; ?>
+
+
+
+
+                    <!-- Cart -->
                     <a href="cart.php" class="text-2xl hover:text-primary transition">🛒</a>
+
+                    <!-- Mobile menu -->
                     <button class="md:hidden text-2xl">☰</button>
                 </div>
+
             </div>
         </div>
     </header>

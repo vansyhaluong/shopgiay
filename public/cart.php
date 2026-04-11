@@ -1,12 +1,15 @@
 <?php
 session_start();
-
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
 
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
 }
 
-$product_id = isset($_POST['product_id']) ? $_POST['product_id'] : "";
+/* $product_id = isset($_POST['product_id']) ? $_POST['product_id'] : "";
 include "Database.php";
 $db = new Database();
 $sql = "SELECT * FROM products WHERE product_id = '$product_id'";
@@ -37,7 +40,8 @@ if ($product) {
             'quantity' => $quantity
         ];
     }
-}
+} */
+
 $total = 0;
 
 if (!empty($_SESSION['cart'])) {
@@ -55,6 +59,7 @@ if (isset($_SESSION['cart'])) {
         $totalQuantity += $item['quantity'];
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -204,6 +209,7 @@ if (isset($_SESSION['cart'])) {
                 <!-- Cart Item 1 -->
                 <?php foreach ($_SESSION['cart'] as $item): ?>
                     <div class="cart-item">
+                        <input type="hidden" name="product_id" value="<?= $item['product_id'] ?>">
                         <img src="images/<?= $item['image'] ?>" alt="" class="w-24 h-24 object-cover rounded-lg">
 
                         <div class="flex-1">
@@ -240,46 +246,6 @@ if (isset($_SESSION['cart'])) {
                         </div>
                     </div>
                 <?php endforeach; ?>
-
-                <!-- Cart Item 2 -->
-                <!--     <div class="cart-item">
-                    <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=120&h=120&fit=crop" alt="Giày bóng rổ" class="w-24 h-24 object-cover rounded-lg">
-
-                    <div class="flex-1">
-                        <h3 class="font-bold text-lg text-gray-900">Giày Bóng Rổ Air Jump</h3>
-                        <p class="text-gray-600 text-sm mb-2">Size: 42 | Màu: Đỏ</p>
-                        <p class="text-blue-600 font-bold text-lg">1.890.000₫</p>
-                    </div>
-
-                    <div class="flex items-center gap-4">
-                        <div class="quantity-control">
-                            <button class="quantity-btn" onclick="updateQuantity(this, -1)">−</button>
-                            <span class="text-lg font-semibold w-8 text-center quantity">1</span>
-                            <button class="quantity-btn" onclick="updateQuantity(this, 1)">+</button>
-                        </div>
-                        <button class="btn-danger" onclick="removeItem(this)">Xóa</button>
-                    </div>
-                </div> -->
-
-                <!-- Cart Item 3 -->
-                <!--         <div class="cart-item">
-                    <img src="https://images.unsplash.com/photo-1525966222134-fceba0dea025?w=120&h=120&fit=crop" alt="Giày thời trang" class="w-24 h-24 object-cover rounded-lg">
-
-                    <div class="flex-1">
-                        <h3 class="font-bold text-lg text-gray-900">Giày Thời Trang Urban</h3>
-                        <p class="text-gray-600 text-sm mb-2">Size: 39 | Màu: Xanh lá</p>
-                        <p class="text-blue-600 font-bold text-lg">899.000₫</p>
-                    </div>
-
-                    <div class="flex items-center gap-4">
-                        <div class="quantity-control">
-                            <button class="quantity-btn" onclick="updateQuantity(this, -1)">−</button>
-                            <span class="text-lg font-semibold w-8 text-center quantity">1</span>
-                            <button class="quantity-btn" onclick="updateQuantity(this, 1)">+</button>
-                        </div>
-                        <button class="btn-danger" onclick="removeItem(this)">Xóa</button>
-                    </div>
-                </div> -->
 
                 <!-- Continue Shopping -->
                 <div class="mt-8">
@@ -319,7 +285,10 @@ if (isset($_SESSION['cart'])) {
                         </span>
                     </div>
 
-                    <button class="w-full btn-primary text-lg mb-3" onclick="checkout()">Thanh Toán</button>
+                    <a href="checkout.php"
+                        class="block w-full text-center bg-blue-500 text-white py-3 rounded-lg text-lg mb-3 hover:bg-blue-600 transition">
+                        Thanh Toán
+                    </a>
                     <!-- <button class="w-full btn-secondary" onclick="applyCoupon()">Áp Dụng Mã Giảm Giá</button> -->
 
                     <div class="mt-6 p-4 bg-blue-50 rounded-lg">
@@ -383,15 +352,15 @@ if (isset($_SESSION['cart'])) {
     </footer>
 
     <script>
-        function updateQuantity(btn, change) {
+        /*  function updateQuantity(btn, change) {
             const quantitySpan = btn.parentElement.querySelector('.quantity');
             let quantity = parseInt(quantitySpan.textContent);
             quantity = Math.max(1, quantity + change);
             quantitySpan.textContent = quantity;
             updateTotal();
-        }
+        } */
 
-        function removeItem(btn) {
+        /* function removeItem(btn) {
             const cartItem = btn.closest('.cart-item');
             cartItem.remove();
             updateTotal();
@@ -401,6 +370,27 @@ if (isset($_SESSION['cart'])) {
             if (remainingItems === 0) {
                 document.getElementById('empty-cart').classList.remove('hidden');
             }
+        } */
+        // gọi json từ file update_quantity
+        function updateQuantity(btn, change) {
+            const cartItem = btn.closest('.cart-item');
+            const productId = cartItem.querySelector('input[name="product_id"]').value;
+
+            fetch('update_quantity.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: `product_id=${productId}&change=${change}`
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // update số lượng
+                    cartItem.querySelector('.quantity').textContent = data.quantity;
+
+                    // 👉 gọi lại hàm tính tổng
+                    updateTotal();
+                });
         }
 
         function updateTotal() {
