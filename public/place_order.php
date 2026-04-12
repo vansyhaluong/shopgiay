@@ -16,7 +16,7 @@ $address = $_POST['address'];
 $ward = $_POST['ward'];
 $district = $_POST['district'];
 $city = $_POST['city'];
-$payment = $_POST['payment'];
+$payment = $_POST['payment'] ?? '';
 
 // Ghép địa chỉ
 $fullAddress = $address . ', ' . $ward . ', ' . $district . ', ' . $city;
